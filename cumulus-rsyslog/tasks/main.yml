@@ -1,7 +1,7 @@
 ---
 - name: Install jq
   import_tasks: jq.yml
-  # when: install_jq
+  when: install_jq
   
 - name: Forward custom log file
   import_tasks: imfile.yml
