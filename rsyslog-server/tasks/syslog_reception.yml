@@ -9,3 +9,4 @@
   with_items:
     - { regexp: '^.*\$ModLoad\s+imtcp',         line: '$ModLoad imtcp'     }
     - { regexp: '^.*\$InputTCPServerRun\s+514', line: '$InputTCPServerRun 514' }
+  notify: Restart rsyslog
