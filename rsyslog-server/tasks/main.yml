@@ -1,3 +1,4 @@
+---
 - name: Enable syslog reception
-  include: syslog_reception.yml
+  import_tasks: syslog_reception.yml
   when: enable_syslog_reception
