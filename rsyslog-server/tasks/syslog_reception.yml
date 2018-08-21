@@ -1,5 +1,5 @@
 ---
-# Tasks file to set up rsyslog server
+# Tasks file to enable syslog reception
 
 - name: "Enable TCP syslog reception"
   lineinfile:
