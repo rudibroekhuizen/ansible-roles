@@ -1,2 +1,3 @@
 ---
 install_jq: yes
+enable_imfile: yes
