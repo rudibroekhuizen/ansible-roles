@@ -1,0 +1,16 @@
+---
+- name: Install jq
+  import_tasks: jq.yml
+  when: install_jq
+  
+- name: Forward custom log file
+  import_tasks: imfile.yml
+  when: enable_imfile
+
+- name: Enable syslog reception
+  import_tasks: cron.yml
+  # when: 
+  
+- name: Forward rsyslog messages to central rsyslog server
+  import_tasks: forward.yml
+  # when: 
