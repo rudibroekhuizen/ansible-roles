@@ -1,0 +1,11 @@
+---
+# Tasks file to set up rsyslog server
+
+- name: "Enable TCP syslog reception"
+  lineinfile:
+    dest: /etc/rsyslog.conf
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+  with_items:
+    - { regexp: '^.*\$ModLoad\s+imtcp',         line: '$ModLoad imtcp'     }
+    - { regexp: '^.*\$InputTCPServerRun\s+514', line: '$InputTCPServerRun 514' }
