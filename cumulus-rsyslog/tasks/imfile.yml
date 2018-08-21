@@ -1,0 +1,15 @@
+---
+- name: Forward custom log file
+  blockinfile:
+    path: /etc/rsyslog.d/60-nclu-int.conf
+    create: yes
+    block: |
+      $ModLoad imfile
+      $InputFileName /var/log/nclu-int.json
+      $InputFileTag nclu-int:
+      $InputFileStateFile nclu-int
+      $InputFileSeverity info
+      $InputFileFacility local7
+      $InputRunFileMonitor
+      $InputFilePollInterval 1
+  notify: Restart rsyslog
