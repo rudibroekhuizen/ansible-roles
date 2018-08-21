@@ -1,0 +1,7 @@
+---
+- name: Forward rsyslog messages to central rsyslog server
+  nclu:
+    commands:
+    - add syslog host ipv4 {{ rsyslog_server }} port tcp 514
+    atomic: true
+    description: "Forward rsyslog messages"
