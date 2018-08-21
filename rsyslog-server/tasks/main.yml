@@ -1,3 +1,3 @@
 - name: Enable syslog reception
-  include: phidget.yaml
+  include: syslog_reception.yml
   when: enable_syslog_reception
