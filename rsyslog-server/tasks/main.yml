@@ -1,0 +1,3 @@
+- name: Enable syslog reception
+  include: phidget.yaml
+  when: enable_syslog_reception
