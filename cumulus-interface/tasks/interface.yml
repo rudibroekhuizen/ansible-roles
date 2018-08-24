@@ -9,8 +9,8 @@
   nclu:
     commands:
       - add interface {{ item }}
-  with_recursive:
-    - '{{ cl_interface }}'
+  with_items:
+    - '{{ interface }}'
   register: interface
 
 - name: Commit nclu only if interface changed
