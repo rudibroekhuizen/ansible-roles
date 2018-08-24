@@ -1,0 +1,3 @@
+---
+- name: Set interfaces
+  import_tasks: interface.yml
