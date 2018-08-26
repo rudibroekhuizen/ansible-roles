@@ -1,7 +1,7 @@
 ---
 # Set interfaces
 
-- name: abort uncommit nclu modification
+- name: Abort uncommit nclu modifications
   nclu:
     abort: true
 
