@@ -1,3 +1,9 @@
+---
+- name: Download OPNsense XML sample config
+  get_url:
+    url: https://raw.githubusercontent.com/opnsense/core/master/src/etc/config.xml.sample
+    dest: /tmp/config.xml
+
 - name: Loop over users
   include: settings.yml
   with_items:
