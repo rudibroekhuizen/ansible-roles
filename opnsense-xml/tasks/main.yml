@@ -1,2 +1,2 @@
-- name: XML
-  import_tasks: xml.yml
+- name: users
+  import_tasks: users.yml
