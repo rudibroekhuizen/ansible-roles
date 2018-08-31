@@ -1,2 +1,6 @@
-- name: users
-  import_tasks: users.yml
+- name: Loop over users
+  include: settings.yml
+  with_items:
+    "{{ users }}"
+  loop_control:
+    loop_var: user
