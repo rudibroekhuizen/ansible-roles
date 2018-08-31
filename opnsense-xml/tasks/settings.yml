@@ -1,0 +1,20 @@
+---
+- name: Download file with custom HTTP headers
+  get_url:
+    url: https://raw.githubusercontent.com/opnsense/core/master/src/etc/config.xml.sample
+    dest: /tmp/config.xml
+
+- name: Modify XML file
+  xml:
+    path: /tmp/config.xml
+    xpath: /opnsense/system/user[name/text()="{{ user.get('name') }}"]/{{ item }}
+    value: "{{ user.get('settings').get(item) }}"
+    pretty_print: yes
+  with_items:
+    "{{ user.get('settings').keys() }}"
+
+#- name: Debug
+#  debug:
+#    msg: "User {{ user.get('name') }} - Key: {{ item }} - Value: {{ user.get('settings').get(item) }}"
+#  with_items:
+#    "{{ user.get('settings').keys() }}"
