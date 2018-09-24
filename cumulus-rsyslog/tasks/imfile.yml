@@ -1,5 +1,5 @@
 ---
-- name: Forward custom log file
+- name: Add custom log file
   blockinfile:
     path: /etc/rsyslog.d/60-nclu-int.conf
     create: yes
